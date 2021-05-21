@@ -11,7 +11,7 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run: yarn
+      - run: npm i
       - save_cache:
           key: "npm-packages"
           paths:
@@ -24,7 +24,7 @@ jobs:
       - restore_cache:
           keys:
             - "npm-packages"
-      - run: yarn
+      - run: npm i
 workflows:
   my_workflow:
     jobs:
